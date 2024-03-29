@@ -1,11 +1,12 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
 import axios from 'axios';
+import ProjectList from './components/projects/ProjectList.vue';
 const endpoint = 'http://localhost:8000/api/projects/';
 
 export default {
   name: 'Boolpress',
-  components: { AppHeader },
+  components: { AppHeader, ProjectList },
   data: () => ({ projects: [] }),
   methods: {
     fetchProjects() {
@@ -23,18 +24,10 @@ export default {
 </script>
 
 <template>
-
   <AppHeader />
-  <main class="container">
-    <h1>Boolpress</h1>
-
-    <ul>
-      <li v-for="project in projects" :key="project.id">
-        <h3 v-text="project.title">
-
-        </h3>
-      </li>
-    </ul>
+  <main class="container pt-3">
+    <h1 class="text-center m-3">Boolpress</h1>
+    <ProjectList :projects="projects" />
   </main>
 
 
