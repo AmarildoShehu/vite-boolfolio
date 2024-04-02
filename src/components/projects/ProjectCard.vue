@@ -1,7 +1,7 @@
 <script>
 export default {
     name: 'ProjectCard',
-    props: { project: Object },
+    props: { project: Object, isDetail: Boolean },
 
     computed: {
         pubblicationDate() {
@@ -44,10 +44,13 @@ export default {
 <template>
     <section class="pt-3">
         <div class="card mb-3">
-            <div class="card-header">
+            <div class="card-header d-flex align-items-center justify-content-between">
                 <h2>{{ project.title }}</h2>
+                <router-link v-if="!isDetail" class="btn btn-secondary"
+                    :to="{ name: 'project-detail', params: { id: project.id } }">vedi
+                    post</router-link>
             </div>
-            <div class="card-body">
+            <div class="card-body clearfix">
                 <p>{{ project.content }}</p>
             </div>
             <div class="card-footer">

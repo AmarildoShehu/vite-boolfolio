@@ -5,6 +5,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../pages/HomePage.vue";
 import ContactUsPage from "../pages/ContactUsPage.vue";
 import NotFoundPage from "../pages/NotFoundPages.vue";
+import ProjectDetailPage from "../pages/ProjectDetailPage.vue";
 
 // Definisco le rotte
 const router = createRouter({
@@ -12,6 +13,12 @@ const router = createRouter({
   linkExactActiveClass: "active",
   routes: [
     { path: "/", component: HomePage, name: "home" },
+    {
+      path: "/projects/:id",
+      component: ProjectDetailPage,
+      name: "project-detail",
+    },
+
     { path: "/Contact-Us", component: ContactUsPage, name: "contact-us-page" },
     {
       path: "/page-not-found",
