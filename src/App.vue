@@ -11,7 +11,7 @@ export default {
   <AppHeader />
   <main class="container pt-3">
 
-    <RouterView />
+    <router-view />
   </main>
 </template>
 
